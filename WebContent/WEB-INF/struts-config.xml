@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+  <form-bean name="addDVDForm" type="com.dvd.view.AddDVDForm" />
+  </form-beans>
+
+  <action-mappings>
+    <action path="/add_dvd"
+            type="com.dvd.controller.AddDVDAction"
+	    name="addDVDForm" scope="request" validate="true"
+	    input="/add_dvd.jsp" >
+      <forward name="success" path="/success.jsp" />
+      <forward name="error" path="/add_dvd.jsp" />
+    </action>
+
+    <action path="/set_prefs"
+            type="com.dvd.controller.SetPreferencesAction" >
+      <forward name="success" path="/index.html" />
+    </action>
+
+  </action-mappings>
+  <message-resources parameter="web-app" />
+
+</struts-config>
